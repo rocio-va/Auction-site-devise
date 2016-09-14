@@ -1,0 +1,30 @@
+<h1>Products#new</h1>
+<p>Find me in app/views/products/new.html.erb</p>
+
+
+<%= form_for(@product, url: products_create_path) do |f| %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title, autofocus: true %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :minimum_bid %><br />
+    <%= f.number_field :minimum_bid, class: 'text_field', step: 0.01 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :deadline %><br />
+    <%= f.date_select :deadline, start_year: Date.today.year %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Create product" %>
+  </div>
+<% end %>
